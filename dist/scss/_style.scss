@@ -1,0 +1,340 @@
+// intro
+.intro_animation {
+  display: block;
+  border-right: solid 3px #111;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 100px;
+  font-weight: 700;
+  color: #111;
+  animation: animated-text 4s steps(30, end) 1.5s 1 normal both,
+    animated-cursor 800ms steps(30, end) infinite;
+}
+// text
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 51%;
+  }
+}
+// cursor
+@keyframes animated-cursor {
+  from {
+    border-right-color: #111;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.introbox {
+  .bar {
+    margin: 100px 0 50px;
+    width: 100%;
+    height: 3px;
+    background: #111;
+  }
+  .introtxt {
+    text-align: left;
+    font-size: 60px;
+    font-weight: 700;
+    .sub_point {
+      position: relative;
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        content: "";
+        width: 100%;
+        height: 50%;
+        background: rgb(80, 210, 249);
+      }
+    }
+  }
+}
+
+// about
+.profile_tit {
+  position: relative;
+  display: block;
+  font-size: 36px;
+  text-align-last: left;
+  .titde {
+    font-size: 28px;
+  }
+  span {
+    &::after {
+      position: absolute;
+      bottom: 13%;
+      left: 12%;
+      z-index: -1;
+      display: block;
+      content: "";
+      width: 98px;
+      height: 22%;
+      background: rgb(80, 210, 249);
+    }
+  }
+}
+.profilebox {
+  display: flex;
+  // justify-content: space-between;
+  margin-top: 45px;
+  .imgbox {
+    width: 350px;
+    img {
+      object-fit: contain;
+    }
+    .img_desc {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 3%;
+    }
+  }
+  .descbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    margin-left: 18%;
+    .desc_name {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .titde {
+      position: relative;
+      display: block;
+      font-size: 26px;
+      font-weight: 600;
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 35%;
+        background: rgb(80, 210, 249);
+      }
+    }
+    .education {
+      .edutit {
+        position: relative;
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          display: block;
+          content: "";
+          width: 30%;
+          height: 35%;
+          background: rgb(80, 210, 249);
+        }
+      }
+      .desc_list {
+        margin-top: 3%;
+      }
+      .edutit {
+        margin-bottom: 2%;
+      }
+    }
+    .skill {
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 3%;
+      }
+      .desc_list {
+        img {
+          width: 45px;
+        }
+      }
+      .list_skill_logo {
+        img {
+          width: 35px;
+        }
+      }
+    }
+  }
+}
+
+// portfolio
+.portfolio {
+  .profile_tit {
+    position: relative;
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      content: "";
+      width: 13.5%;
+      height: 33%;
+      background: rgb(80, 210, 249);
+    }
+  }
+}
+.portzip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 45px;
+  .portlist {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    margin: 5px 5px;
+    padding: 5px 0;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      content: "";
+      width: 0;
+      height: 0;
+      transition: width 1s, height 1s;
+    }
+    &:hover {
+      width: 33%;
+      height: 100%;
+      background: rgba(144, 142, 142, 0.01);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      .portlist_desc {
+        &::after {
+          width: 100%;
+          background: rgba(80, 210, 249, 0.7);
+        }
+      }
+      &:last-child {
+        .portlist_desc {
+          &::after {
+            width: 88%;
+            left: 6%;
+          }
+        }
+      }
+    }
+    .portlist_box {
+      height: 125px;
+      display: flex;
+      align-items: center;
+    }
+    .festar {
+      width: 250px;
+    }
+    .sound {
+      width: 150px;
+    }
+    .lazuli {
+      width: 70px;
+    }
+    .portlist_desc {
+      position: relative;
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 500;
+      height: 50px;
+      &::after {
+        position: absolute;
+        bottom: 45%;
+        left: 0;
+        z-index: -1;
+        display: block;
+        content: "";
+        width: 0;
+        height: 25%;
+        transition: width 0.5s;
+      }
+    }
+  }
+  .port_link {
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    .link_list {
+      display: block;
+      margin-right: 10px;
+      .link_a {
+        position: relative;
+        display: block;
+        width: 100px;
+        padding: 5% 0;
+        text-align: center;
+        font-size: 1.125rem;
+        &:hover {
+          font-weight: 700;
+          &::after {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            z-index: -1;
+            content: "";
+            width: 80%;
+            height: 25%;
+            background: rgb(80, 210, 249);
+          }
+        }
+      }
+      &:nth-child(2) {
+        .link_a {
+          &:hover {
+            &::after {
+              position: absolute;
+              bottom: 20%;
+              left: 33%;
+              z-index: -1;
+              content: "";
+              width: 35%;
+              height: 25%;
+              background: rgb(80, 210, 249);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// contact
+
+.infobox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  .icon {
+    i {
+      font-size: 28px;
+    }
+  }
+  .con_desc {
+    font-size: 18px;
+  }
+  .git {
+    img {
+      width: 50px;
+      margin: 0 auto;
+    }
+  }
+}
+.footdesc {
+  margin-top: 15px;
+  .f_d {
+    font-size: 14px;
+    &:first-child {
+      margin-bottom: 5px;
+    }
+  }
+}
